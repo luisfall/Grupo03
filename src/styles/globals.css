@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pokebola{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    overflow: hidden;
+    box-shadow: inset 20px -10px 0px 10px rgba(0, 0, 0, 0.5);
+   animation: fall .40s ease-in-out,rota 3s infinite;
+}
+
+.pokebola::after{
+    content: "";
+    width: 40px;
+    height: 60px;
+    background-color:  whitesmoke;
+    transition-duration: 1s red;
+    position: absolute;
+    top: 5%;
+    left: 65%;
+    border-radius: 50%;
+    transform: rotate(-40deg);
+}
+
+.pokebola::before{
+    content: '';
+    width: 400px;
+    height: 110px;
+    background-color: rgb(244, 236, 236);
+    position: absolute;
+    border-radius: 50%;
+    margin-left: -100px;
+    border-bottom: 20px solid black;
+}
+
+.detalle{
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    position: absolute;
+    top: 38%;
+    left:40%;
+    border-radius: 50%;
+    border: 10px solid black;
+    
+}
+
+.detalle::before{
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid black;
+    top: 15%;
+    left: 18%;
+    animation: atrapar 3s infinite;
+}
+
+@keyframes atrapar{
+    0%{
+        background-color: red;
+    }
+    75%{
+        background-color: yellow;
+    }
+}
+
+@keyframes rota{
+    0%{
+        transform: rotate(-30deg);
+    }
+    50%{
+        transform: rotate(30deg);
+    }
+    100%{
+        transform: rotate(-30deg);
+    }
+}
+
+
+.pokebolaOpen{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    overflow: hidden;
+    box-shadow: inset 20px -10px 0px 10px rgba(0, 0, 0, 0.5);
+   animation: fall .25s ease-in-out, rota 1.25s cubic-bezier(.36,.07,.19,.97);
+}
+
+.pokebolaOpen::after{
+    content: "";
+    width: 40px;
+    height: 60px;
+    background-color:  rgb(251, 25, 25);
+    transition-duration: 1s red;
+    position: absolute;
+    top: 5%;
+    left: 65%;
+    border-radius: 50%;
+    transform: rotate(-40deg);
+}
+
+.pokebolaOpen::before{
+    content: '';
+    width: 400px;
+    height: 110px;
+    background-color: rgb(228, 6, 6);
+    position: absolute;
+    border-radius: 50%;
+    margin-left: -100px;
+    border-bottom: 20px solid black;
+}
+
+.detalleOpen{
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    position: absolute;
+    top: 38%;
+    left:40%;
+    border-radius: 50%;
+    border: 10px solid black;
+    
+}
+
+.detalleOpen::before{
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: rgb(8, 247, 32);
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid black;
+    top: 15%;
+    left: 18%;
+}
+
+@keyframes atrapar{
+    0%{
+        background-color: red;
+    }
+    75%{
+        background-color: yellow;
+    }
+}
+
+@keyframes fall {
+    0% { top: -200px }
+    60% { top: 0 }
+    80% { top: -20px }
+    100% { top: 0 }
+  }
